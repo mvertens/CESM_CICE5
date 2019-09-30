@@ -58,7 +58,7 @@
          spval_dbl = 1.0e30_dbl_kind    ! special value (double precision)
 
       real (kind=real_kind), parameter, public :: &
-         spval     = 1.0e30_real_kind   ! special value for netCDF output
+         spval_re  = 1.0e30_real_kind   ! special value for netCDF output
 
       real (kind=dbl_kind), parameter, public :: &
          iceruf   = 0.0005_dbl_kind   ,&! ice surface roughness (m)

@@ -20,7 +20,7 @@
 
       use ice_kinds_mod
       use pio, only : pio_real, pio_double
-      use ice_constants, only : spval, spval_dbl
+      use ice_constants, only : spval_re, spval_dbl
 
       implicit none
       private
@@ -325,8 +325,8 @@
           status = pio_put_att(File,varid,'long_name',trim(coord_var(i)%long_name))
           status = pio_put_att(File, varid, 'units', trim(coord_var(i)%units))
           if (history_precision == pio_real) then
-             status = pio_put_att(File, varid, 'missing_value', spval)
-             status = pio_put_att(File, varid,'_FillValue',spval)
+             status = pio_put_att(File, varid, 'missing_value', spval_re)
+             status = pio_put_att(File, varid,'_FillValue',spval_re)
           else
              status = pio_put_att(File, varid, 'missing_value', spval_dbl)
              status = pio_put_att(File, varid,'_FillValue',spval_dbl)
@@ -361,8 +361,8 @@
            status = pio_put_att(File,varid, 'long_name', 'ocean grid mask')
            status = pio_put_att(File, varid, 'coordinates', 'TLON TLAT')
           if (history_precision == pio_real) then
-             status = pio_put_att(File, varid, 'missing_value', spval)
-             status = pio_put_att(File, varid,'_FillValue',spval)
+             status = pio_put_att(File, varid, 'missing_value', spval_re)
+             status = pio_put_att(File, varid,'_FillValue',spval_re)
           else
              status = pio_put_att(File, varid, 'missing_value', spval_dbl)
              status = pio_put_att(File, varid,'_FillValue',spval_dbl)
@@ -375,8 +375,8 @@
            status = pio_put_att(File, varid, 'coordinates', 'TLON TLAT')
            status = pio_put_att(File,varid,'comment', 'mytask + iblk/100')
           if (history_precision == pio_real) then
-             status = pio_put_att(File, varid, 'missing_value', spval)
-             status = pio_put_att(File, varid,'_FillValue',spval)
+             status = pio_put_att(File, varid, 'missing_value', spval_re)
+             status = pio_put_att(File, varid,'_FillValue',spval_re)
           else
              status = pio_put_att(File, varid, 'missing_value', spval_dbl)
              status = pio_put_att(File, varid,'_FillValue',spval_dbl)
@@ -391,8 +391,8 @@
              status = pio_put_att(File, varid, 'units', trim(var(i)%req%units))
              status = pio_put_att(File, varid, 'coordinates', trim(var(i)%coordinates))
              if (history_precision == pio_real) then
-                status = pio_put_att(File, varid, 'missing_value', spval)
-                status = pio_put_att(File, varid,'_FillValue',spval)
+                status = pio_put_att(File, varid, 'missing_value', spval_re)
+                status = pio_put_att(File, varid,'_FillValue',spval_re)
              else
                 status = pio_put_att(File, varid, 'missing_value', spval_dbl)
                 status = pio_put_att(File, varid,'_FillValue',spval_dbl)
@@ -413,8 +413,8 @@
              status = &
              pio_put_att(File, varid, 'units', trim(var_nverts(i)%units))
              if (history_precision == pio_real) then
-                status = pio_put_att(File, varid, 'missing_value', spval)
-                status = pio_put_att(File, varid,'_FillValue',spval)
+                status = pio_put_att(File, varid, 'missing_value', spval_re)
+                status = pio_put_att(File, varid,'_FillValue',spval_re)
              else
                 status = pio_put_att(File, varid, 'missing_value', spval_dbl)
                 status = pio_put_att(File, varid,'_FillValue',spval_dbl)
@@ -447,8 +447,8 @@
             status = pio_put_att(File,varid,'cell_measures', &
                         trim(avail_hist_fields(n)%vcellmeas))
             if (history_precision == pio_real) then
-               status = pio_put_att(File, varid, 'missing_value', spval)
-               status = pio_put_att(File, varid,'_FillValue',spval)
+               status = pio_put_att(File, varid, 'missing_value', spval_re)
+               status = pio_put_att(File, varid,'_FillValue',spval_re)
             else
                status = pio_put_att(File, varid, 'missing_value', spval_dbl)
                status = pio_put_att(File, varid,'_FillValue',spval_dbl)
@@ -500,8 +500,8 @@
             status = pio_put_att(File,varid,'cell_measures', &
                         trim(avail_hist_fields(n)%vcellmeas))
             if (history_precision == pio_real) then
-               status = pio_put_att(File, varid, 'missing_value', spval)
-               status = pio_put_att(File, varid,'_FillValue',spval)
+               status = pio_put_att(File, varid, 'missing_value', spval_re)
+               status = pio_put_att(File, varid,'_FillValue',spval_re)
             else
                status = pio_put_att(File, varid, 'missing_value', spval_dbl)
                status = pio_put_att(File, varid,'_FillValue',spval_dbl)
@@ -542,8 +542,8 @@
             status = pio_put_att(File,varid,'cell_measures', &
                         trim(avail_hist_fields(n)%vcellmeas))
             if (history_precision == pio_real) then
-               status = pio_put_att(File, varid, 'missing_value', spval)
-               status = pio_put_att(File, varid,'_FillValue',spval)
+               status = pio_put_att(File, varid, 'missing_value', spval_re)
+               status = pio_put_att(File, varid,'_FillValue',spval_re)
             else
                status = pio_put_att(File, varid, 'missing_value', spval_dbl)
                status = pio_put_att(File, varid,'_FillValue',spval_dbl)
@@ -583,8 +583,8 @@
             status = pio_put_att(File,varid,'cell_measures', &
                         trim(avail_hist_fields(n)%vcellmeas))
             if (history_precision == pio_real) then
-               status = pio_put_att(File, varid, 'missing_value', spval)
-               status = pio_put_att(File, varid,'_FillValue',spval)
+               status = pio_put_att(File, varid, 'missing_value', spval_re)
+               status = pio_put_att(File, varid,'_FillValue',spval_re)
             else
                status = pio_put_att(File, varid, 'missing_value', spval_dbl)
                status = pio_put_att(File, varid,'_FillValue',spval_dbl)
@@ -631,8 +631,8 @@
             status = pio_put_att(File,varid,'cell_measures', &
                         trim(avail_hist_fields(n)%vcellmeas))
             if (history_precision == pio_real) then
-               status = pio_put_att(File, varid, 'missing_value', spval)
-               status = pio_put_att(File, varid,'_FillValue',spval)
+               status = pio_put_att(File, varid, 'missing_value', spval_re)
+               status = pio_put_att(File, varid,'_FillValue',spval_re)
             else
                status = pio_put_att(File, varid, 'missing_value', spval_dbl)
                status = pio_put_att(File, varid,'_FillValue',spval_dbl)
@@ -674,8 +674,8 @@
             status = pio_put_att(File,varid,'cell_measures', &
                         trim(avail_hist_fields(n)%vcellmeas))
             if (history_precision == pio_real) then
-               status = pio_put_att(File, varid, 'missing_value', spval)
-               status = pio_put_att(File, varid,'_FillValue',spval)
+               status = pio_put_att(File, varid, 'missing_value', spval_re)
+               status = pio_put_att(File, varid,'_FillValue',spval_re)
             else
                status = pio_put_att(File, varid, 'missing_value', spval_dbl)
                status = pio_put_att(File, varid,'_FillValue',spval_dbl)
@@ -717,8 +717,8 @@
             status = pio_put_att(File,varid,'cell_measures', &
                         trim(avail_hist_fields(n)%vcellmeas))
             if (history_precision == pio_real) then
-               status = pio_put_att(File, varid, 'missing_value', spval)
-               status = pio_put_att(File, varid,'_FillValue',spval)
+               status = pio_put_att(File, varid, 'missing_value', spval_re)
+               status = pio_put_att(File, varid,'_FillValue',spval_re)
             else
                status = pio_put_att(File, varid, 'missing_value', spval_dbl)
                status = pio_put_att(File, varid,'_FillValue',spval_dbl)
@@ -851,7 +851,7 @@
           END SELECT
           if (history_precision == pio_real) then
              ! Convert T grid longitude from -180 -> 180 to 0 to 360
-             rworkr2 = spval
+             rworkr2 = spval_re
              do iblk=1,nblocks
                 do j=1,ny_block
                    do ii=1,nx_block
@@ -867,7 +867,7 @@
                 enddo
              enddo
              call pio_write_darray(File, varid, iodesc2d, &
-                  rworkr2, status, fillval=spval)
+                  rworkr2, status, fillval=spval_re)
           else
              if(coord_var(i)%short_name .eq. 'TLON') then
                 ! Convert T grid longitude from -180 -> 180 to 0 to 360
@@ -882,7 +882,7 @@
 
         ! Extra dimensions (NCAT, VGRD*)
 
-	do i = 1, nvarz
+       do i = 1, nvarz
           if (igrdz(i)) then
             status = pio_inq_varid(File, var_nz(i)%short_name, varid)
             SELECT CASE (var_nz(i)%short_name)
@@ -943,7 +943,7 @@
             END SELECT
             status = pio_inq_varid(File, var(i)%req%short_name, varid)
             if (history_precision == pio_real) then
-               rworkr2 = spval
+               rworkr2 = spval_re
                do iblk=1,nblocks
                   do j=1,ny_block
                      do ii=1,nx_block
@@ -954,7 +954,7 @@
                   enddo
                enddo
                call pio_write_darray(File, varid, iodesc2d, &
-                    rworkr2, status, fillval=spval)
+                    rworkr2, status, fillval=spval_re)
             else
                call pio_write_darray(File, varid, iodesc2d, &
                     pworkr2, status, fillval=spval_dbl)
@@ -969,7 +969,7 @@
       if (f_bounds) then
          if (history_precision == pio_real) then
             allocate(rworkr3v(nverts,nx_block,ny_block,nblocks))
-            rworkr3v (:,:,:,:) = spval
+            rworkr3v (:,:,:,:) = spval_re
          else
             allocate(rworkr3v(nverts,nx_block,ny_block,nblocks))
             workr3v (:,:,:,:) = spval_dbl
@@ -1040,7 +1040,7 @@
             status = pio_inq_varid(File, var_nverts(i)%short_name, varid)
             if (history_precision == pio_real) then
                call pio_write_darray(File, varid, iodesc3dv, &
-                                rworkr3v, status, fillval=spval)
+                                rworkr3v, status, fillval=spval_re)
             else
                call pio_write_darray(File, varid, iodesc3dv, &
                                 workr3v, status, fillval=spval_dbl)
@@ -1072,13 +1072,13 @@
                         if (a2D(ii,j,n,iblk) .ne. spval_dbl) then
                            rworkr2(ii,j,iblk) = real(a2d(ii,j,n,iblk),kind=real_kind)
                         else
-                           rworkr2(ii,j,iblk) = spval
+                           rworkr2(ii,j,iblk) = spval_re
                         endif
                      enddo
                   enddo
                enddo
                call pio_write_darray(File, varid, iodesc2d,&
-                    rworkr2, status, fillval=spval)
+                    rworkr2, status, fillval=spval_re)
             else
                call pio_write_darray(File, varid, iodesc2d,&
                     a2D(:,:,n,1:nblocks), status, fillval=spval_dbl)
@@ -1105,7 +1105,7 @@
                'ice: Error getting varid for '//avail_hist_fields(n)%vname)
             call pio_setframe(File, varid, int(1,kind=PIO_OFFSET_KIND))
             if (history_precision == pio_real) then
-               rworkr3 = spval
+               rworkr3 = spval_re
                do iblk = 1, nblocks
                   do i = 1, ncat_hist
                      do j=1,ny_block
@@ -1118,7 +1118,7 @@
                   enddo
                enddo
                call pio_write_darray(File, varid, iodesc3dc,&
-                    rworkr3, status, fillval=spval)
+                    rworkr3, status, fillval=spval_re)
             else
                do iblk = 1, nblocks
                   do i = 1, ncat_hist
@@ -1146,7 +1146,7 @@
                'ice: Error getting varid for '//avail_hist_fields(n)%vname)
             call pio_setframe(File, varid, int(1,kind=PIO_OFFSET_KIND))
             if (history_precision == pio_real) then
-               rworkr3 = spval
+               rworkr3 = spval_re
                do i = 1, nzilyr
                   do iblk = 1, nblocks
                      do j=1,ny_block
@@ -1159,7 +1159,7 @@
                   enddo
                enddo
                call pio_write_darray(File, varid, iodesc3di,&
-                    rworkr3, status, fillval=spval)
+                    rworkr3, status, fillval=spval_re)
             else
                do i = 1, nzilyr
                   do iblk = 1, nblocks
@@ -1187,7 +1187,7 @@
                'ice: Error getting varid for '//avail_hist_fields(n)%vname)
             call pio_setframe(File, varid, int(1,kind=PIO_OFFSET_KIND))
             if (history_precision == pio_real) then
-               rworkr3 = spval
+               rworkr3 = spval_re
                do iblk = 1, nblocks
                   do i = 1, nzlyrb
                      do j=1,ny_block
@@ -1200,7 +1200,7 @@
                   enddo
                enddo
                call pio_write_darray(File, varid, iodesc3db,&
-                    rworkr3, status, fillval=spval)
+                    rworkr3, status, fillval=spval_re)
             else
                do iblk = 1, nblocks
                   do i = 1, nzlyrb
@@ -1228,7 +1228,7 @@
                'ice: Error getting varid for '//avail_hist_fields(n)%vname)
             call pio_setframe(File, varid, int(1,kind=PIO_OFFSET_KIND))
             if (history_precision == pio_real) then
-               rworkr4 = spval
+               rworkr4 = spval_re
                do iblk = 1, nblocks
                   do i = 1, ncat_hist
                      do k = 1, nzilyr
@@ -1243,7 +1243,7 @@
                   enddo ! i
                enddo ! iblk
                call pio_write_darray(File, varid, iodesc4di,&
-                    rworkr4, status, fillval=spval)
+                    rworkr4, status, fillval=spval_re)
             else
                do iblk = 1, nblocks
                   do i = 1, ncat_hist
@@ -1274,7 +1274,7 @@
             call pio_setframe(File, varid, int(1,kind=PIO_OFFSET_KIND))
 
             if (history_precision == pio_real) then
-               rworkr4 = spval
+               rworkr4 = spval_re
                do iblk = 1, nblocks
                   do i = 1, ncat_hist
                      do k = 1, nzslyr
@@ -1290,7 +1290,7 @@
                   enddo ! i
                enddo ! iblk
                call pio_write_darray(File, varid, iodesc4ds,&
-                    rworkr4, status, fillval=spval)
+                    rworkr4, status, fillval=spval_re)
             else
                do j = 1, nblocks
                   do i = 1, ncat_hist

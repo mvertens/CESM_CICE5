@@ -75,7 +75,7 @@
          spval_dbl = SHR_CONST_SPVAL    ! special value
 
       real (kind=real_kind), parameter :: &
-         spval     = 1.0e30_real_kind   ! special value for netCDF output
+         spval_re  = 1.0e30_real_kind   ! special value for netCDF output
 
       real (kind=dbl_kind), parameter :: &
          iceruf   = 0.0005_dbl_kind   ,&! default ice surface roughness (m)

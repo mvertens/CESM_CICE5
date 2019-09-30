@@ -43,7 +43,7 @@
       use ice_kinds_mod
       use ice_calendar, only: write_ic, dayyr, histfreq, use_leap_years
       use ice_communicate, only: my_task, master_task
-      use ice_constants, only: spval
+      use ice_constants, only: spval_re
       use ice_domain_size, only: nx_global, ny_global, max_nstrm
       use ice_read_write, only: ice_open, ice_write
       use ice_fileunits, only: nu_history, nu_hdr, nu_diag
@@ -102,8 +102,8 @@
         end if
         write (nu_hdr, 999) 'comment',title,' '
         write (nu_hdr, 999) 'conventions','CICE',' '
-        write (nu_hdr, 997) 'missing_value',spval
-        write (nu_hdr, 997) '_FillValue',spval
+        write (nu_hdr, 997) 'missing_value',spval_re
+        write (nu_hdr, 997) '_FillValue',spval_re
 
         call date_and_time(date=current_date, time=current_time)
         write (nu_hdr,1000) current_date(1:4), current_date(5:6), &
